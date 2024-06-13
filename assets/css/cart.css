@@ -7,6 +7,12 @@ body {
     margin: 0px 166px;
 }
 
+.page {
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 .header {
     background-image: url(../pictures/bg.jpg);
     height: 100vh;
