@@ -69,57 +69,59 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['place_order'])) {
     <link rel="manifest" href="assets/pictures/site.webmanifest">
 </head>
 <body>
-    <div class="header">
-        <div class="container">
-            <div class="header_line">
-                <div class="header_logo">
-                    <img src="assets/pictures/logo.png" alt="Логотип магазина кормов">
-                </div>
-                <div class="nav">
-                    <a class="nav_item" href="index.php">ГЛАВНАЯ</a>
-                    <a class="nav_item" href="catalog.php">КАТАЛОГ</a>
-                    <a class="cart_holder" href="cart.php">
-                        <img class="cart_img" src="assets/pictures/cart.png" alt="Корзина">
-                    </a>
+    <div class="page">
+        <div class="header">
+            <div class="container">
+                <div class="header_line">
+                    <div class="header_logo">
+                        <img src="assets/pictures/logo.png" alt="Логотип магазина кормов">
+                    </div>
+                    <div class="nav">
+                        <a class="nav_item" href="index.php">ГЛАВНАЯ</a>
+                        <a class="nav_item" href="catalog.php">КАТАЛОГ</a>
+                        <a class="cart_holder" href="cart.php">
+                            <img class="cart_img" src="assets/pictures/cart.png" alt="Корзина">
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="order_container">
-            <div class="order_title">Оформление заказа</div>
-            <?php if ($orderPlaced): ?>
-                <div class="thx">Спасибо за заказ!</div>
-            <?php else: ?>
-                <div class="order_forms">
-                    <form action="order.php" method="post" class='order_form'>
-                        <div class="form_top">
-                            <div class="form_group">
-                                <label for="phone" class='phone'>Номер телефона</label>
-                                <input type="text" id="phone" name="phone" value="<?= htmlspecialchars($userPhone) ?>" required class='phone_inp'>
+            <div class="order_container">
+                <div class="order_title">Оформление заказа</div>
+                <?php if ($orderPlaced): ?>
+                    <div class="thx">Спасибо за заказ!</div>
+                <?php else: ?>
+                    <div class="order_forms">
+                        <form action="order.php" method="post" class='order_form'>
+                            <div class="form_top">
+                                <div class="form_group">
+                                    <label for="phone" class='phone'>Номер телефона</label>
+                                    <input type="text" id="phone" name="phone" value="<?= htmlspecialchars($userPhone) ?>" required class='phone_inp'>
+                                </div>
+                                <div class="form_group">
+                                    <label for="address" class='address'>Адрес доставки</label>
+                                    <input type="text" id="address" name="address" required class='address_inp'>
+                                </div>
                             </div>
-                            <div class="form_group">
-                                <label for="address" class='address'>Адрес доставки</label>
-                                <input type="text" id="address" name="address" required class='address_inp'>
+                            <div class="form_bottom">
+                                <div class="order_suptitle">Ваши товары</div>
+                                <ul class="order_list">
+                                    <?php foreach ($cart as $item): ?>
+                                        <li class="order_item">
+                                            <div class="product_title"><?= htmlspecialchars($item['Название']) ?></div>
+                                            <div class="product_quantity">Количество: <?= htmlspecialchars($item['quantity']) ?></div>
+                                            <div class="product_price">Цена: <?= htmlspecialchars($item['Цена']) ?> руб.</div>
+                                        </li>
+                                    <?php endforeach; ?>
+                                </ul>
+                                <div class="total_price">
+                                    <strong>Итоговая цена: <?= htmlspecialchars($totalPrice) ?> руб.</strong>
+                                </div>
+                                <button type="submit" name="place_order" class="btn">Оформить заказ</button>
                             </div>
-                        </div>
-                        <div class="form_bottom">
-                            <div class="order_suptitle">Ваши товары</div>
-                            <ul class="order_list">
-                                <?php foreach ($cart as $item): ?>
-                                    <li class="order_item">
-                                        <div class="product_title"><?= htmlspecialchars($item['Название']) ?></div>
-                                        <div class="product_quantity">Количество: <?= htmlspecialchars($item['quantity']) ?></div>
-                                        <div class="product_price">Цена: <?= htmlspecialchars($item['Цена']) ?> руб.</div>
-                                    </li>
-                                <?php endforeach; ?>
-                            </ul>
-                            <div class="total_price">
-                                <strong>Итоговая цена: <?= htmlspecialchars($totalPrice) ?> руб.</strong>
-                            </div>
-                            <button type="submit" name="place_order" class="btn">Оформить заказ</button>
-                        </div>
-                    </form>
-                </div>
-            <?php endif; ?>
+                        </form>
+                    </div>
+                <?php endif; ?>
+            </div>
         </div>
     </div>
 </body>
