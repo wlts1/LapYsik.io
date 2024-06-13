@@ -1,0 +1,135 @@
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+    margin: 0px 166px;
+}
+
+.header {
+    background-image: url(../pictures/bg.jpg);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header_line {
+    padding-top: 50px;
+    display: flex;
+    align-items: center;
+
+    justify-content: center;
+}
+
+.header_logo {
+    margin-right: 20px;
+}
+
+.nav_item {
+    color: #FFFFFF;
+    background: #E76F1A;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 10px;
+
+    margin-right: 25px;
+
+    border-radius: 10px;
+    border: 2px solid #6E4C1E;
+
+    transition: color .3s linear, background .5s ease ;
+}
+
+.nav_item:hover {
+    color: #EDC4B3;
+    background: #6E4C1E;
+}
+
+.cart_container {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 20px;
+    max-width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart_title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 26px;
+    color: #6E4C1E;
+    margin-bottom: 20px;
+}
+
+.cart_text {
+    text-align: center;
+    font-weight: 700;
+    font-size: 20px;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.product_title {
+    margin-top: 0;
+    font-weight: 700;
+    font-size: 16px;
+    color: #6E4C1E;
+    text-wrap: nowrap;
+    max-width: 200px;
+}
+
+.product_desc {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.product_price {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #000;
+}
+
+.product_quantity {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #000;
+}
+
+.cart_forms {
+    display: flex;
+    align-items: center;
+
+}
+
+.cart_form {
+    margin: 20px;
+    margin-bottom: 0;
+}
+
+.btn {
+    text-decoration: none;
+    cursor: pointer;
+    background: #E76F1A;
+    color: #FFFFFF;
+    border: #6E4C1E 2px solid;
+    border-radius: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 10px;
+
+    transition: color .3s linear, background .5s ease;
+    margin: 0 auto;
+}
+
+.btn:hover {
+    color: #EDC4B3;
+    background: #6E4C1E;
+}
